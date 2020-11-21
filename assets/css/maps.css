@@ -1,0 +1,203 @@
+body, div, p, ul, li  {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.container, #map {
+    width: 100%;
+    height: 100vh;
+}
+
+/* sideBar */
+.sidebar__container {
+    position: absolute;
+    left: -461px;
+    width: 500px;
+    height: 100%;
+    z-index: 9999;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 458px;
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 3px solid #cec7c7;
+    box-shadow: 2px 0px 10px 0px #0a0a0a;
+}
+
+/* sidebar in search */
+.sidebar__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #e0e1e2;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.search-box__items {
+    position: absolute;
+    top: 34px;
+    width: 410px;
+    border-left: 1px solid #e0e1e2;
+    border-right: 1px solid #e0e1e2;
+    border-bottom: 1px solid #e0e1e2;
+    background-color: #ffffff;
+}
+
+.none { display: none; }
+
+.search-item {
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    background-color: lightblue;
+    opacity: 0.5;
+}
+
+.search {
+    width: 100%;
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 0px;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* sidebar in content */
+.sidebar__content {
+    overflow: auto;
+    flex: 1;
+    height: 100%;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.rotateEvent {
+    transition: all ease 1s;
+}
+
+.arrowImg {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+/* sidebar in item */
+li {
+    list-style-type: none;
+}
+
+.sidebar__list-item {
+    display: flex;
+    height: 150px;
+    padding: 5px 0px;
+    border-bottom: 1px solid #e0e1e2;
+    cursor: pointer;
+}
+
+.img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+}
+
+.img {
+    width: 115px;
+    height: 115px;
+}
+
+.content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+}
+
+.title {
+    flex: 1;
+    overflow: hidden;
+    display: block;
+    width: 285px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.address {
+    flex: 2;
+    font-size: 15px;
+}
+
+.tel {
+    font-size: 14px;
+}
+
+/* sideBar Animation */
+.open {
+    animation: open 1s;
+    animation-fill-mode: forwards;
+}
+
+.close {
+    animation: close 1s;
+    animation-fill-mode: forwards;
+}
+
+.info-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    padding: 10px;
+    text-align: center;
+}
+
+@keyframes open {
+    from {
+        left: -461px;
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes close {
+    from {
+        left: 0px;
+    }
+    to {
+        left: -461px;
+    }
+}
